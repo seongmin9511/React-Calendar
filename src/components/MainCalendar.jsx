@@ -16,8 +16,8 @@ const MainCalendar = () => {
   // 옵션 값 정리
   const messages = {
     today : '오늘'
-    , previous : '<'
-    , next : '>'
+    , previous : '〈'
+    , next : '〉'
     , month : '월'
     , week : '주'
     , day : '일'
@@ -47,6 +47,13 @@ const MainCalendar = () => {
     nextEvents.splice( idx, 1, updateEvent )
     setEvents(nextEvents)
   }, [events])
+
+  // 날짜 클릭시 팝업 생성
+  const handleDateClick = (date) => {
+    console.log('Clicked date:', date);
+    
+    setShowPopup(true);
+  }
 
   /**
    * React-big-calendar 간단 정리
